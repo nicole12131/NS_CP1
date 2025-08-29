@@ -1,4 +1,4 @@
-# NS - CP1 Projects 
+# NS - CP1 Projects  who_are_you
 name = input("What is your name: ") 
 age = input("How old are you: ")
 favoritecolor = input("What is your favorite color: ")
