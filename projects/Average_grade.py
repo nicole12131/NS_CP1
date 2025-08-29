@@ -8,8 +8,6 @@ drawing_grade = input("what is your grade in Drawing class? : ")
 english_grade = input("what is your grade in English class? : ")
 worldcivi_grade = input("what is your garde in Wolrd civilizations class? : ")
 
-# Calculate the average
-average = (grade1 + grade2 + grade3 + grade4 + grade5 + grade6 + grade7) / 7
+average = (cs_grade + math_grade + biology_grade + advisory_grade + drawing_grade + english_grade + worldcivi_grade) / 7
 
-# Output the average rounded to 2 decimal places
 print("Your average grade is:", round(average, 2))
