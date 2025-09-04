@@ -1,19 +1,12 @@
-# NS 1st 🔨 Madlib
+# NS 1st 🔨 Madlib 
 
-adjective_one = input("Tell me an adjective : ")
-adjective_two = input("Tell me another adjective : ")
-typeofbird = input("Tell me a type of bird : ")
-roominahouse= input("Tell me a room in a house : ")
-verb_pasttense = input("Tell me a verb past tense  ")
-verb = input("Tell me a verb : ")
-relative_name = input("Tell me a relative's name : ")
-noun = input("Tell me an noun : ")
-liquid = input("Tell me a type of liquid : ")
-verb_ining = input("Tell me a verb ending in-ing : ")
-partofthebody_plural = input("Tell me a part of the body plural ")
-plural_noun = input("Tell me a plural noun :  ")
-verbining_two = input("Tell me a verb ending in-ing : ")
-noun_two = input("Tell me an noun ")
+adjective = input("Enter an adjective : ")
+noun1 = input("Enter a noun: ")
+verb1 = input("Enter a verb: ")
+adverb1 = input("Enter an adverb: ")
+plural_noun1 = input("Enter a plural noun: ")
 
-story = "It was a" + adjective_one, + "cold November day. I woke up to the" + adjective_two + "smell of" + typeofbird + "roasting in the" + roominahouse + "downstairs. I" + verb_pasttense + "down the stairs to see if I could help" + verb + "the dinner. My mom said 'See if" + relative_name + "needs a fersh" + noun + "' So I "
+story = "One , " + adjective + ",day, a, " + noun1 + ", decided to, " + verb1 + "," + adverb1 + ",Along the way, it stumbled upon a group of, " + plural_noun1 + ",who were having the time of their lives, " + ",Everyone laughed, cheered, and joined in, making it a truly, " + adjective + ",adventure!."
 
+
+print(story)
