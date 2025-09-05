@@ -20,8 +20,8 @@
 #print(f"That is cool {full_name}. I like {color} too!")
 
 pi = "3.14159"           
-#print(f"We all know pi is equal to {pi:. 3f})                                                                                                                                                                                                                                                                                           
-#print(pi.isdecimal())
+print(f"We all know pi is equal to {pi :3f}") 
+print(pi.isdecimal())
 
 sentence = "The quick brown fox jumps over the lazy dog."
 word = "jumps"
