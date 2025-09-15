@@ -20,4 +20,4 @@ strength = int(input("which stat do you want as your strength: \n")) +2
 
 
 print(f"This is a random number form 0 - 1 : {random.random()}")
-print(f"This is a random number form 1 - 20 : {random.randint(1,20)}")
+print(f"This is a random number form 1 - 20 : {random.randint()}")
