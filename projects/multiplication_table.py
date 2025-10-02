@@ -1,2 +1,2 @@
-# NS 1st 🔨 Multiplication Table
+# NS 1st 🔨 Multiplication
 
