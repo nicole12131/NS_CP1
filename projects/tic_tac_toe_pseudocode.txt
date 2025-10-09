@@ -1,18 +1,40 @@
 # NS 1st 🔨 Pseudocode Tic Tac Toe Program
 
-# Import random module
+Start the program
 
-#Initialize player and computer scores to 0 
+Tell the user “Welcome to Tic Tac Toe!”
 
-# print "Welcome to tic tac toe game"
-# print "type 'quit' anytime if you want to stop playing
+Create a 3 by 3 board with empty spaces for the moves
+Set the first turn to be the user’s turn
 
-# Main game loop
-while True:
-    # Ask player if they want to x or o 
-    # Convert the input to lowecase
+While the game is still going:
+    Show the board to the user
 
-    # While the input is not valid (not x, or o):
-        # Ask the player to input a valid choice
+If it’s the user’s turn:
+        Ask the user to pick a row and column between 1 and 3
+        If that spot is empty:
+            Put an X there for the user
+        Otherwise:
+            Tell the user that spot is already taken and let them try again
 
-    
+If it’s the computer’s turn:
+        Tell the user the computer is making a move
+        The computer picks a random empty spot on the board
+        Put an O in that spot for the computer
+
+After each move, check if someone won:
+        If three of the same symbols are in a row, column, or diagonal:
+            Show the board
+            Say who won (User or Computer)
+            End the game
+If the board is full and nobody won:
+    Show the board
+    Say “It’s a tie!”
+    End the game
+Switch turns:
+        If it was the user’s turn, make it the computer’s turn
+        If it was the computer’s turn, make it the user’s turn
+
+When the game is over, say “Game over! Thanks for playing!”
+
+End the program
