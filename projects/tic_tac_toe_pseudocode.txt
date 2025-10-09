@@ -1,2 +1,18 @@
 # NS 1st 🔨 Pseudocode Tic Tac Toe Program
 
+# Import random module
+
+#Initialize player and computer scores to 0 
+
+# print "Welcome to tic tac toe game"
+# print "type 'quit' anytime if you want to stop playing
+
+# Main game loop
+while True:
+    # Ask player if they want to x or o 
+    # Convert the input to lowecase
+
+    # While the input is not valid (not x, or o):
+        # Ask the player to input a valid choice
+
+    
