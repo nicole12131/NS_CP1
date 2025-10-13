@@ -7,7 +7,7 @@ password = input("Enter your password: ")
 # Check how many points the user has
 score = 0
 
-# if the password is 8 characters user gets one point
+# if the password is 8 characters long user gets one point
 if len(password) >= 8:
     score += 1
 
