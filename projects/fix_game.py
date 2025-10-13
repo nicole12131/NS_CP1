@@ -16,7 +16,7 @@ def start_game():
         try:
             guess = int(input("Enter your guess: "))
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print("Invalid input. Please enter a number.") 
             # Bug 2: Invalid input should not count as an attempt.
             # Fix: Use `continue` to restart the loop without incrementing attempts.
             continue
@@ -42,7 +42,7 @@ def start_game():
         # Bug 4: The `continue` statement at the end of the loop was unnecessary.
         # It forced the loop to restart even after a correct guess.
         # It's removed to allow the game to end and print the "Game Over" message.
-        # Fix: Remove the unnecessary `continue` statement.
+        # Fix: Remove the unnecessary `continue` statement.     
         
     print("Game Over. Thanks for playing!")
 
