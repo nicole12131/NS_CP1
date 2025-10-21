@@ -1,14 +1,24 @@
 # NS 1st Functions Notes 
 #Set variables
-
-#define functions 
+player_health = 100
+monster_health = 100
+#define functions
+def damage(amount, turn):
+    if turn == "player":
+        return monster_health - amount, player_health
+    else:
+        return monster_health, player_health - amount
+    
+monster_health, player_health = damage(10, "player")
+print(f"Monster Health: {monster_health}")
+print(f"Player Health: {player_health}")
 def add(x,y):
     return x+y
 
 def initials(name):
     names = name.split(" ")
     initials = ""
-    for name in names:
+    for name in names: 
         initials += name[0]
 
         return initials
@@ -22,4 +32,5 @@ while x < add(3,9):
     x+=1
 
 print("Goose!")
-
+print(initials("Tia LaRose"))
+print(initials("Franco "))
