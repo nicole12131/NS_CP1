@@ -22,13 +22,13 @@ def caesar_cipher(text, shift, mode):
         shift = -shift
 
     for char in text:
-        if char.isalpha():  # Check if it's a letter
+         if char.isalpha():
             # Determine ASCII base (A or a)
             base = ord('A') if char.isupper() else ord('a')
             # Shift character and wrap using modulo 26
             new_char = chr((ord(char) - base + shift) % 26 + base)
             result += new_char
-        else:
+    else:
             # Leave non-alphabetic characters unchanged
             result += char
 
