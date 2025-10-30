@@ -1,15 +1,16 @@
 # NS 1st 🔨 Turtle Race
+# import turtle, random, and time
 import turtle
-import random
+import random 
 import time
 
-# setup the screen
+# setup the screen 
 def setup_screen():
     screen = turtle.Screen()
-    screen.title("🐢 Turtle Race 🐢")
-    screen.bgcolor("lightblue")
+    screen.title("Turtle Race")
+    screen.bgcolor("white")
 
-    # draw finish line
+# draw finish line
     line = turtle.Turtle()
     line.hideturtle()
     line.speed(0)
@@ -27,18 +28,18 @@ def setup_screen():
 
 # make turtles
 def create_turtles():
-    colors = ["red", "blue", "green", "orange", "purple"]
+    colors = ["red", "blue", "green", "yellow", "orange"]
     turtles = []
-    y_pos = 100
+    position = 100
 
     for color in colors:
         t = turtle.Turtle(shape="turtle")
         t.color(color)
         t.penup()
-        t.goto(-250, y_pos)
+        t.goto(-250, position)
         t.pendown()
         turtles.append(t)
-        y_pos -= 50
+        position -= 50
 
     return turtles
 
@@ -54,26 +55,25 @@ def race(turtles):
             if t.xcor() >= finish_line:
                 winner = t.color()[0]
                 break
-        time.sleep(0.05)  # slows down the race a bit
+        time.sleep(0.05) # slows down the race a bit
     return winner
 
-# main function
+# main function 
 def main():
     screen = setup_screen()
     racers = create_turtles()
     winner = race(racers)
-
-    # show winner message
+# shows winner message 
     msg = turtle.Turtle()
     msg.hideturtle()
     msg.penup()
     msg.goto(0, -200)
-    msg.write(f"The {winner} turtle won!", align="center", font=("Arial", 18, "bold"))
+    msg.write(f"The {winner} turtle won!")
 
-    print(f"The {winner} turtle won!")  # print in terminal too
+    print(f"The {winner} turtle won!")  
 
     screen.mainloop()
 
-# run the program
+# run the program 
 if __name__ == "__main__":
     main()
