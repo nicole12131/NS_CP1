@@ -55,7 +55,7 @@ def race(turtles):
             if t.xcor() >= finish_line:
                 winner = t.color()[0]
                 break
-        time.sleep(0.05) # slows down the race a bit
+        time.sleep(0.05)# slows down the race a bit 
     return winner
 
 # main function 
