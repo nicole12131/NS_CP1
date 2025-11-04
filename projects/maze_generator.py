@@ -101,7 +101,7 @@ def mark_points():
 #  Main program 
 def main():
     setup_screen()
-    maze = make_maze(6, 6) # at least 6x6
+    maze = make_maze(6, 6)
     draw_maze(maze, 50)
     mark_points()
     turtle.done()
