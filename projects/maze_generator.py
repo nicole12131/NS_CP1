@@ -3,25 +3,20 @@
 import turtle 
 import random 
 
-# make the box of the maze
-turtle.pendown
-position = 100
-turtle.goto(0, position)
-turtle.penup
-turtle.forward(330)
-turtle.penup()
-turtle.forward(30)
-turtle.pendown()
-turtle.right(90)
-turtle.forward(360)
-turtle.right(90)
-turtle.forward(330)
-turtle.penup()
-turtle.forward(30)
-turtle.pendown()
-turtle.right(90)
-turtle.forward(360)
+maze_width = 10  
+maze_height = 10 
+cell_size = 30
+screen_width = maze_width * cell_size
+screen_height = maze_height * cell_size
+wall = 1
+empty = 0
+star_pos = (0, 0)
+end_pos = (maze_height - 1, maze_height - 1)
 
-turtle.right(90)
-turtle.forward(30)
-turtle.right
+# set up the maze screen 
+def setup_screen():
+    screen = turtle.Screen()
+    screen.setup(screen_width + 50, screen_height + 50 )
+    screen.setup(0, 0, screen_width, screen_height)
+    screen.bgcolor("white")
+
