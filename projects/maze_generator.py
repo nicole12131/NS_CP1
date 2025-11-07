@@ -20,3 +20,14 @@ def setup_screen():
     screen.setup(0, 0, screen_width, screen_height)
     screen.bgcolor("white")
 
+pen = turtle.Turtle()
+pen.speed(0)
+pen.penup()
+pen.hideturtle()
+
+def draw_wall(x1, y1, x2, y2):
+    pen.goto(x1, y1)
+    pen.pendown()
+    pen.goto(x2, y2)
+    pen.penup()
+
