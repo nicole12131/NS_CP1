@@ -5,3 +5,11 @@ menu = {
     "Main Courses": [],
     "Side Dishes": [],
 }
+
+Your_order = {
+    "Drink": "",
+    "Main Course": "",
+    "Side dishes": "",
+    "Total cost": "",
+}
+

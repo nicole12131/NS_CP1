@@ -1,2 +1,2 @@
 
-t3.forward(side)
+    rows = 6

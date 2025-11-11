@@ -9,21 +9,19 @@ def setup_turtle():
     turtle.pensize(3)
     turtle.penup()
     turtle.bgcolor("white")
-    turtle.title("Simple Maze Generator")
+    turtle.title("Maze Generator")
 
 # DRAW WALL 
 def draw_wall(x, y, size):
-    """Draws a single square wall cell."""
     turtle.goto(x, y)
     turtle.pendown()
-    for _ in range(4):
+    for i in range(4):
         turtle.forward(size)
         turtle.right(90)
     turtle.penup()
 
 # GENERATE MAZE
 def generate_maze(rows, cols, cell_size):
-    """Uses nested loops and conditionals to make a simple maze."""
     start_x = -cols * cell_size / 2
     start_y = rows * cell_size / 2
 
@@ -42,33 +40,17 @@ def generate_maze(rows, cols, cell_size):
             if random.choice([True, False, False, False]):
                 draw_wall(x, y, cell_size)
 
-# MARK START & END
-def mark_points(rows, cols, cell_size):
-    start_x = -cols * cell_size / 2
-    start_y = rows * cell_size / 2
 
-    # Start point
-    turtle.goto(start_x + 5, start_y - 5)
-    turtle.color("green")
-    turtle.write("START", font=("Arial", 12, "bold"))
 
-    # End point
-    turtle.goto(start_x + (cols - 1) * cell_size + 5, start_y - (rows - 1) * cell_size - 25)
-    turtle.color("red")
-    turtle.write("END", font=("Arial", 12, "bold"))
-    turtle.color("black")
-
-# MAIN FUNCTION
-    setup_turtle()
+def set_turtle():
     rows = 6
     cols = 6
     cell_size = 50
-
+    draw_wall(cols, rows, cell_size)
     generate_maze(rows, cols, cell_size)
-    mark_points(rows, cols, cell_size)
-
+    
     turtle.done()
 
-# RUN PROGRAM
-if __name__ == "__main__":
-    main()
+
+set_turtle()
+setup_turtle()
