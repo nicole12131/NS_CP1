@@ -22,3 +22,5 @@ if drink == menu:
     Your_order["Drink"] = drink
 else: 
     print()
+
+print(Your_order.items())
