@@ -6,6 +6,7 @@ import turtle
 turtle.speed(0)
 turtle.pensize(3)
 turtle.hideturtle()
+
 # make maze grid row 
 grid_row = [
     [0,1,1,1,1,1],
@@ -19,12 +20,11 @@ grid_row = [
 # rows, cols,and cell sizes 
 rows = len(grid_row)
 cols = len(grid_row[0])
-cell_size = 30
+cell_size = 70
 
 # Move to starting position
 turtle.penup()
 turtle.goto(-cols*cell_size/2, rows*cell_size/2)
-turtle.setheading(0)
 
 # Draw based on row data 
 for i in range(rows):
@@ -41,5 +41,34 @@ for i in range(rows):
     turtle.right(90)
     turtle.forward(cell_size)
     turtle.left(90)
+
+
+# make maze walls
+turtle.penup()
+turtle.backward(cols * cell_size)
+turtle.goto(-cols*cell_size/2, rows*cell_size/2)
+turtle.pendown()
+turtle.right(90)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+
+turtle.penup()
+turtle.backward(cols * cell_size)
+turtle.goto(-cols*cell_size/2, rows*cell_size/2)
+turtle.penup()
+turtle.right(-90)
+turtle.forward(420)
+turtle.right(90)
+turtle.pendown()
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
+turtle.forward(cell_size)
 
 turtle.done()
