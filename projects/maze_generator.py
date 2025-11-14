@@ -2,49 +2,44 @@
 
 import turtle
 
-# set up turtle
-def setup():
-    t = turtle.Turtle()
-    t.color("black")
-    t.speed(0)
-    t.pensize(3)
-    t.hideturtle()
-
-
-
-grid_row = [[0,1,1,1,1,1],
-            [0,0,0,1,0,1],
-            [1,1,0,1,0,1],
-            [1,0,0,0,0,1],
-            [1,0,1,1,1,1],
-            [1,0,0,0,0,1],
-            [1,1,1,1,1,0]]
-
-grid_column = [[0,1,1,1,1,1],
-            [0,0,0,1,0,1],
-            [1,1,0,1,0,1],
-            [1,0,0,0,0,1],
-            [1,0,1,1,1,1],
-            [1,0,0,0,0,1],
-            [1,1,1,1,1,0]]
-
-row = 6
-columns = 6
+# Setup turtle
+turtle.speed(0)
+turtle.pensize(3)
+turtle.hideturtle()
+# make maze grid row 
+grid_row = [
+    [0,1,1,1,1,1],
+    [0,0,0,1,0,1],
+    [1,1,0,1,0,1],
+    [1,0,0,0,0,1],
+    [1,0,1,1,1,1],
+    [1,0,0,0,0,1],
+    [1,1,1,1,1,0]
+]
+# rows, cols,and cell sizes 
+rows = len(grid_row)
+cols = len(grid_row[0])
 cell_size = 30
 
-for i in range(row):
-    for j in range(columns):
-        if grid_row[j][i] == 0:
-            turtle.penup()
-            turtle.forward(cell_size)
-        if grid_row[j][i] == 1:
-            turtle.pendown()
-            turtle.forward(cell_size)
+# Move to starting position
+turtle.penup()
+turtle.goto(-cols*cell_size/2, rows*cell_size/2)
+turtle.setheading(0)
 
-turtle.hideturtle
+# Draw based on row data 
+for i in range(rows):
+    for j in range(cols):
+        if grid_row[i][j] == 0:
+            turtle.penup()
+        else:
+            turtle.pendown()
+        turtle.forward(cell_size)
+
+    # Finished row and move down to next line
+    turtle.penup()
+    turtle.backward(cols * cell_size)
+    turtle.right(90)
+    turtle.forward(cell_size)
+    turtle.left(90)
 
 turtle.done()
-
-
-
-
