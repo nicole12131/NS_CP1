@@ -26,7 +26,7 @@ def calculator(*args, operation="sum"):
         return "Invalid operation."
 
 
-# --- Main Program (User Interface) ---
+# Main Program (User Interface) 
 print("Welcome to the Flexible Calculator!\n")
 print("Available operations: sum, average, max, min, product\n")
 
