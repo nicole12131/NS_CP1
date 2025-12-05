@@ -19,7 +19,7 @@
 # define function for Ameno Archon Statue
     # ask user if they want to stay or go to another location
     # if user choose to stay
-    # user can 
+    # user can e
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
