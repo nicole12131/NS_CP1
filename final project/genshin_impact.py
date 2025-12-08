@@ -1,50 +1,73 @@
 # NS 1st Final Project code 
-
+import random
 locations = ["dawn winery", "starsnatch cliff", "nameless island", "ameno archon statue", 
              "stormbearer mountains", "springvale", "mondstadt city", "stormterror's lair", "starfell lake"]
 
 print(locations)
 
 location = input("what location do you want to explore?: ").lower()
-if location == locations:
-        print(f"Time to explore {location}")
+if location == locations[0:9]:
+    print(f"Time to explore {location} ")
 else:
-        print("Invdalid location try again")
-
+    print("Invalid location try again")
 
 def Mondstadtcity():
     if location == locations[6]:
         print("welcome to Mondstadt city")
 
-def anemo_archon_statue():
-    if location == locations[3]:
+def statue():
+    if location == statue:
         print("welcome to the Ameno Archon Statue")
 
-def dawn_winery():
+def winery():
     if location == locations[0]:
-        print("welcome to Dawn Winery")
+        print(f"welcome to {locations[0]}")
 
-def starsnatch_cliff():
-    if location == locations[1]:
+def starsnatch():
+    if location == starsnatch:
         print("welcome to Starsnatch Cliff")
 
-def nameless_island():
-     if location == locations[2]:
+def island():
+     if location == island:
         print("welcome to the Nameless Island")
 
-def stormbearer_mountains():
-     if location == locations[4]:
+def stormbearers():
+     if location == locations:
         print("Welcome to Stormbearer Mountains")
 
 def springvale():
-    if location == locations[5]:
+    if location == locations:
          print("Welcome to Springvale")
 
-def stormterrors_lair():
-    if location == locations[7]:
+def stormterrors():
+    if location == locations:
         print("Welcome to Stormterror Lair")
 
-def starfell_lake():
-    if location == locations[8]:
+def starfell():
+    if location == locations:
         print("Welcome to the Starfell Lake")
 
+player_magic = 50
+player_defense = 50
+player_HP = 100
+player_attack = 30
+Player_inventory = {}
+
+
+sword = random.randint(3,6)
+punch = random.randint(1,3)
+sword_potion = random.randint(6,12)
+punch_potion = random.randint(2,6)
+
+def combat():
+    combat_options = ["sword", "punch", "potion", "run away"]
+    options = input("")
+def HP():
+    while player_HP <= 100:
+        print("Your HP is low")
+    if player_HP == 0:
+        print("You died!")
+
+inventory = {}
+
+def player_inventory():
