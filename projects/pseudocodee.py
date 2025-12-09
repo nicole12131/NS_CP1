@@ -8,8 +8,9 @@
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
 
-# if the user choose to go to Mondstadt city
+
 # define function for Mondstadt city
+    # if the user choose to go to Mondstadt city
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can buy things in the shops or they can explore
