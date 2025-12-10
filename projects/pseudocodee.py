@@ -7,8 +7,6 @@
 # if the location that the user choose is on the list it will return the location to the main game loop and it will continue the game
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-
-
 # define function for Mondstadt city
     # if the user choose to go to Mondstadt city
     # ask user if they want to stay or go to another location
@@ -16,24 +14,25 @@
     # user can buy things in the shops or they can explore
     # if user choose to go to another location ask what location 
 
-# if the player choose to go to the Anemo Archon Statue
 # define function for Ameno Archon Statue
+    # if the player choose to go to the Anemo Archon Statue
+
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can explore
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# if player choose to go to Dawn Winery
 # define function for Dawn Winery
+    # if player choose to go to Dawn Winery
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can fight with monsters that are close like a cryo slime or a Hilichurl 
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# if player choose to go to Starsnatch Cliff
 # define function for Starsnatch Cliff
+    # if player choose to go to Starsnatch Cliff
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can explore to find swords or flowers
@@ -41,16 +40,16 @@
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# if player choose to go to Nameless Island 
 # define function for Nameless Island
+    # if player choose to go to Nameless Island 
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can explore 
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# if player choose to go to Stormbearer Mountains
 # define function for Stormbearer Mountains
+    # if player choose to go to Stormbearer Mountains
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can pick up dandelion Seed, and Valberry
@@ -58,16 +57,17 @@
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# if player choose to go to Springvale
+
 # define function for Springvale
+    # if player choose to go to Springvale
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can explore 
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# if player choose to go to Stormterror’s Lair
 # define function for Stormterror’s Lair
+    # if player choose to go to Stormterror’s Lair
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can figth with Hilichurl, abyss mage,  Ruin Guard and Ruin Hunter
@@ -75,8 +75,8 @@
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# if player choose to go to Starfell Lake
-# define function for Starfell Lake  
+# define function for Starfell Lake
+    # if player choose to go to Starfell Lake
     # ask user if they want to stay or go to another location
     # if user choose to stay
     # user can explore

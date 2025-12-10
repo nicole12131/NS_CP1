@@ -8,18 +8,13 @@ print(locations)
 location = input("what location do you want to explore?: ").lower()
 while True:
     if location in locations:
-        break        
+        break      
     else:
         print("invalid location")
 
-# if the user choose to go to Mondstadt city
-# define function for Mondstadt city
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can buy things in the shops or they can explore
-    # if user choose to go to another location ask what location 
+
 def mondstadt_city():
-    if location in locations[6]:
+    if location in locations == [6]:
         print("welcome to Mondstadt city")
         m = input("do you want to stay or go to another location?:  ")
         if m == "stay":
@@ -29,7 +24,7 @@ def mondstadt_city():
         if mo == "buy":
             print("You can buy flowers and jewelry ")
             mon = input("What are you going to buy?: ")
-        else:
+        if mo == "explore":
             print("You decided to explore!")
             print("You found some keys for a chest!")
             chest = input("Do you want to continue exploring to find the chest?: ")
@@ -37,8 +32,20 @@ def mondstadt_city():
             print("there are Calla Lilies, Cecilia, Small Lamp Grass, and Windwheel Asters")
             flowers = input("which flower do you want to buy?: ")
         if mon == "jewelry":
-            print("there are ")
+            print("there are gems and mora ")
             jewelry  = input("which jewelry do you want to buy?: ")
+            if flowers == "Calla Lilies":
+                print("You buy some Calla Lilies!")
+            if flowers == "Cecilia":
+                print("You buy some Cecilias!")
+            if flowers == "small Lamp Grass":
+                print("You buy some small Lamp Grass!")
+            if flowers == "Windwheel Asters":
+                print("You buy some Calla Lilies!")
+            if jewelry == "gems":
+                print("You buy some gems")
+            if jewelry == "mora":
+                print("You buy some mora")
 
 
 # define function for Ameno Archon Statue
@@ -49,7 +56,7 @@ def mondstadt_city():
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
 def statue():
-    if location == locations[3]:
+    if location in location:
         print("welcome to the Ameno Archon Statue")
         s = input("do you want to stay or go to another location?:  ")
         if s == "stay":
@@ -57,7 +64,12 @@ def statue():
         else:
            location = input("what location do you want to explore?:  ").lower()
         if st == "explore":
-            print("You found a")
+            print("You found a sword")
+            swo = input("Do you want to keep it?:  ")
+        if swo == "yes":
+            print("Now you have a new sword")
+        if swo == "no":
+            print("You left the sword")
 
 # define function for Dawn Winery
     # ask user if they want to stay or go to another location
@@ -69,6 +81,12 @@ def statue():
 def winery():
     if location == locations[0]:
         print(f"welcome to Dawn winery")
+        w = input("Do you want to stay or go to another location")
+        if w == "stay":
+            print("You can explore!")
+        if w == "another location":
+            location = input("what location do you want to explore?:  ").lower()
+
 
 # define function for Starsnatch Cliff
     # ask user if they want to stay or go to another location
@@ -140,6 +158,10 @@ def stormterrors():
 def starfell():
     if location ==  locations[8]:
         print("Welcome to the Starfell Lake")
+        st = input("Do you want to stay or go to another location")
+        if st == "stay":
+            print("You can pick uo fish or you can explore")
+            fish = input("Do you want to pick up fish or explore")
 
 player_magic = 50
 player_defense = 50
@@ -163,7 +185,7 @@ def combat():
     elif choice == "punch":
         print(f"You punch for {punch} damage!")
     elif choice == "potion":
-        print(f"You used a potion and restored {sword_potion} HP!")
+        print(f"You used a potion and did {sword_potion} damage!")
     elif choice == "run":
         print("You ran away!")
     else:
