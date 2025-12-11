@@ -1,200 +1,351 @@
 # NS 1st Final Project code 
 import random
-locations = ["dawn winery", "starsnatch cliff", "nameless island", "ameno archon statue", 
-             "stormbearer mountains", "springvale", "mondstadt city", "stormterror's lair", "starfell lake"]
 
-print(locations)
 
-location = input("what location do you want to explore?: ").lower()
+locations = [
+    "Dawn Winery",
+    "Starsnatch Cliff",
+    "Nameless Island",
+    "Anemo Archon Statue",
+    "Stormbearer Mountains",
+    "Springvale",
+    "Mondstadt City",
+    "Stormterror's Lair",
+    "Starfell Lake"
+]
+
+
+player_stats = {
+    "HP": 30,
+    "Attack": 5,
+    "Defense": 3,
+    "Magic": 2,
+    "EXP": 0,
+    "Level": 1
+}
+
+inventory = []
+enemies_alive = {
+    "Cryo Slime": True,
+    "Hilichurl": True,
+    "Ruin Guard": True,
+    "Eye of the Storm": True,
+    "Abyss Mage": True,
+    "Stormterror": True,
+}
+
+items_on_ground = {
+    "Sword": "Starsnatch Cliff",
+    "Flower": "Starsnatch Cliff",
+    "Dandelion Seed": "Stormbearer Mountains",
+    "Valberry": "Stormbearer Mountains",
+    "Fish": "Starfell Lake",
+    "Potion": "Springvale"
+}
+
+
+
+def choose_location():
+    print(locations)
 while True:
-    if location in locations:
-        break      
+        choice = input("\nWhere do you want to go? ").strip()
+if choice in locations:
+    return choice
+else:
+        print("Invalid location, try again.")
+
+
+def stay_or_go():
+    while True:
+        choice = input("Stay or go to another location? (stay/go): ").lower()
+    if choice in ["stay", "go"]:
+        return choice
     else:
-        print("invalid location")
+        print("Invalid choice, try again.")
+
 
 
 def mondstadt_city():
-    if location in locations == [6]:
-        print("welcome to Mondstadt city")
-        m = input("do you want to stay or go to another location?:  ")
-        if m == "stay":
-            mo = input("Do you want to buy things or explore?: ")
-        else:
-           location = input("what location do you want to explore?:  ").lower()
-        if mo == "buy":
-            print("You can buy flowers and jewelry ")
-            mon = input("What are you going to buy?: ")
-        if mo == "explore":
-            print("You decided to explore!")
-            print("You found some keys for a chest!")
-            chest = input("Do you want to continue exploring to find the chest?: ")
-        if mon == "flowers":
-            print("there are Calla Lilies, Cecilia, Small Lamp Grass, and Windwheel Asters")
-            flowers = input("which flower do you want to buy?: ")
-        if mon == "jewelry":
-            print("there are gems and mora ")
-            jewelry  = input("which jewelry do you want to buy?: ")
-            if flowers == "Calla Lilies":
-                print("You buy some Calla Lilies!")
-            if flowers == "Cecilia":
-                print("You buy some Cecilias!")
-            if flowers == "small Lamp Grass":
-                print("You buy some small Lamp Grass!")
-            if flowers == "Windwheel Asters":
-                print("You buy some Calla Lilies!")
-            if jewelry == "gems":
-                print("You buy some gems")
-            if jewelry == "mora":
-                print("You buy some mora")
+    print("\nYou arrive at Mondstadt City.")
+    choice = stay_or_go()
+    if choice == "stay":
+        print("You visit shops and explore the city.")
+    else:
+        return choose_location()
 
 
-# define function for Ameno Archon Statue
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can explore
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
-
-def statue():
-    if location in location:
-        print("welcome to the Ameno Archon Statue")
-        s = input("do you want to stay or go to another location?:  ")
-        if s == "stay":
-            st = input("Do you want to explore?: ")
-        else:
-           location = input("what location do you want to explore?:  ").lower()
-        if st == "explore":
-            print("You found a sword")
-            swo = input("Do you want to keep it?:  ")
-        if swo == "yes":
-            print("Now you have a new sword")
-        if swo == "no":
-            print("You left the sword")
-
-# define function for Dawn Winery
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can fight with monsters that are close like a cryo slime or a Hilichurl 
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
-
-def winery():
-    if location == locations[0]:
-        print(f"welcome to Dawn winery")
-        w = input("Do you want to stay or go to another location")
-        if w == "stay":
-            print("You can explore!")
-        if w == "another location":
-            location = input("what location do you want to explore?:  ").lower()
+def anemo_archon_statue():
+    print("\nYou arrive at the Anemo Archon Statue.")
+    choice = stay_or_go()
+    if choice == "stay":
+        print("You explore the peaceful statue grounds.")
+    else:
+        return choose_location()
 
 
-# define function for Starsnatch Cliff
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can explore to find swords or flowers
-    # and they can fight with Hilichurl, slimes, Ruin Guard and eye of the Storm
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
+def dawn_winery():
+    print("\nYou arrive at Dawn Winery.")
+    choice = stay_or_go()
 
-def starsnatch():
-    if location == locations[1]:
-        print("welcome to Starsnatch Cliff")
+    if choice == "stay":
+        print("You encounter local monsters nearby.")
 
-# define function for Nameless Island
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can explore 
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
+        if enemies_alive["Cryo Slime"]:
+            combat("Cryo Slime", 10)
+            enemies_alive["Cryo Slime"] = False
 
-def island():
-     if location ==  locations[2]:
-        print("welcome to the Nameless Island")
+        if enemies_alive["Hilichurl"]:
+            combat("Hilichurl", 12)
+            enemies_alive["Hilichurl"] = False
 
-# define function for Stormbearer Mountains
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can pick up dandelion Seed, and Valberry
-    # user can fight with Hilichurl, slimes, Ruin Guard, Cryo abyss mage, Anemo Hypostasis, samachurl, blazing Axe Mitachurl, and Fauti Electro cicin mage.
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
+    else:
+        return choose_location()
 
-def stormbearers():
-     if location ==  locations[4]:
-        print("Welcome to Stormbearer Mountains")
 
-# define function for Springvale
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can explore 
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
+def starsnatch_cliff():
+    print("\nYou climb to Starsnatch Cliff.")
+    choice = stay_or_go()
+
+    if choice == "stay":
+        print("You explore for swords and flowers.")
+
+        for item, loc in items_on_ground.items():
+            if loc == "Starsnatch Cliff":
+                print(f"You found a {item}!")
+                inventory.append(item)
+                items_on_ground[item] = None
+
+        if enemies_alive["Ruin Guard"]:
+            combat("Ruin Guard", 25)
+            enemies_alive["Ruin Guard"] = False
+
+        if enemies_alive["Eye of the Storm"]:
+            combat("Eye of the Storm", 18)
+            enemies_alive["Eye of the Storm"] = False
+
+    else:
+        return choose_location()
+
+
+def nameless_island():
+    print("\nYou arrive at Nameless Island.")
+    choice = stay_or_go()
+
+    if choice == "stay":
+        print("You explore a mysterious empty island.")
+    else:
+        return choose_location()
+
+
+def stormbearer_mountains():
+    print("\nYou travel to Stormbearer Mountains.")
+    choice = stay_or_go()
+
+    if choice == "stay":
+
+        for item, loc in list(items_on_ground.items()):
+            if loc == "Stormbearer Mountains":
+                print(f"You picked up {item}.")
+                inventory.append(item)
+                items_on_ground[item] = None
+
+        print("You encounter multiple enemies!")
+
+        if enemies_alive["Abyss Mage"]:
+            combat("Abyss Mage", 15)
+            enemies_alive["Abyss Mage"] = False
+
+    else:
+        return choose_location()
+
 
 def springvale():
-    if location ==  locations[5]:
-         print("Welcome to Springvale")
+    print("\nYou enter Springvale.")
+    choice = stay_or_go()
 
-# define function for Stormterror’s Lair
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can figth with Hilichurl, abyss mage,  Ruin Guard and Ruin Hunter
-    # user can fight with the final boss the dragon Stormterror
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
+    if choice == "stay":
+        print("You explore the friendly village.")
 
-def stormterrors():
-    if location ==  locations[7]:
-        print("Welcome to Stormterror Lair")
+        if items_on_ground.get("Potion") == "Springvale":
+            print("You found a Potion!")
+            inventory.append("Potion")
+            items_on_ground["Potion"] = None
 
-# define function for Starfell Lake  
-    # ask user if they want to stay or go to another location
-    # if user choose to stay
-    # user can explore
-    # user can pick up fish 
-    # user can figth with hilichurl and samachurl
-    # if user choose to go to another location ask what location 
-    # if the location is not in the list tell the user that the input is invalid and they need to try again
-
-def starfell():
-    if location ==  locations[8]:
-        print("Welcome to the Starfell Lake")
-        st = input("Do you want to stay or go to another location")
-        if st == "stay":
-            print("You can pick uo fish or you can explore")
-            fish = input("Do you want to pick up fish or explore")
-
-player_magic = 50
-player_defense = 50
-player_HP = 100
-player_attack = 30
-Player_inventory = {}
-
-
-
-sword = random.randint(3,6)
-punch = random.randint(1,3)
-sword_potion = random.randint(6,12)
-punch_potion = random.randint(2,6)
-
-def combat():
-    combat_options = ["sword", "punch", "potion", "run"]
-    choice = input("Choose your action (sword/punch/potion/run): ").lower()
-
-    if choice == "sword":
-        print(f"You dealt {sword} damage!")
-    elif choice == "punch":
-        print(f"You punch for {punch} damage!")
-    elif choice == "potion":
-        print(f"You used a potion and did {sword_potion} damage!")
-    elif choice == "run":
-        print("You ran away!")
     else:
-        print("Invalid choice!")
+        return choose_location()
 
-def HP():
-    while player_HP <= 100:
-        print("Your HP is low")
-    if player_HP == 0:
-        print("You died!")
 
-inventory = {}
+def stormterror_lair():
+    print("\nYou enter Stormterror’s Lair.")
+    choice = stay_or_go()
+
+    if choice == "stay":
+        print("Dangerous enemies surround you!")
+
+        if enemies_alive["Stormterror"]:
+            print("⚠ The FINAL BOSS Stormterror appears!")
+            combat("Stormterror", 35)
+            enemies_alive["Stormterror"] = False
+            print("Stormterror is now on your side!")
+        else:
+            print("Stormterror has already been defeated.")
+
+    else:
+        return choose_location()
+
+
+def starfell_lake():
+    print("\nYou arrive at Starfell Lake.")
+    choice = stay_or_go()
+
+    if choice == "stay":
+
+        # pick fish
+        if items_on_ground.get("Fish") == "Starfell Lake":
+            print("You caught some fish!")
+            inventory.append("Fish")
+            items_on_ground["Fish"] = None
+
+        if enemies_alive["Hilichurl"]:
+            combat("Hilichurl", 10)
+            enemies_alive["Hilichurl"] = False
+
+    else:
+        return choose_location()
+
+
+
+def combat(enemy, enemy_hp):
+    print(f"\n⚔ Combat started against {enemy}!")
+
+    while enemy_hp > 0 and player_stats["HP"] > 0:
+        print(f"\nYour HP: {player_stats['HP']}\n{enemy}'s HP: {enemy_hp}")
+        action = input("Choose action (punch/sword/potion/run): ").lower()
+
+        if action == "punch":
+            dmg = random.randint(1, 3) + player_stats["Attack"]
+            enemy_hp -= dmg
+            print(f"You punch for {dmg} damage!")
+
+        elif action == "sword":
+            if "Sword" in inventory:
+                dmg = random.randint(3, 6) + player_stats["Attack"]
+                enemy_hp -= dmg
+                print(f"You slash with your sword for {dmg} damage!")
+            else:
+                print("You don't have a sword!")
+
+        elif action == "potion":
+            show_inventory()
+            continue
+
+        elif action == "run":
+            print("You ran away!")
+            return
+
+        else:
+            print("Invalid action.")
+            continue
+
+        # Enemy attacks back
+        if enemy_hp > 0:
+            enemy_dmg = random.randint(1, 5) - player_stats["Defense"]
+            enemy_dmg = max(0, enemy_dmg)
+            player_stats["HP"] -= enemy_dmg
+            print(f"{enemy} hits you for {enemy_dmg} damage!")
+
+    # Combat results
+    if player_stats["HP"] <= 0:
+        death_screen()
+
+    print(f"\nYou defeated {enemy}!")
+    player_stats["EXP"] += 5
+    check_level_up()
+
+
+def show_inventory():
+    print("\nInventory:", inventory)
+    choice = input("Use or remove an item? (use/remove/back): ").lower()
+
+    if choice == "use":
+        item = input("Which item? ")
+
+        if item not in inventory:
+            print("Item not found.")
+            return
+        
+        if item == "Potion":
+            player_stats["HP"] += 10
+            print("You used a Potion and recovered 10 HP!")
+            inventory.remove(item)
+
+        else:
+            print("You can't use that item now.")
+
+    elif choice == "remove":
+        item = input("Which item? ")
+
+        if item not in inventory:
+            print("Item not found.")
+            return
+
+        inventory.remove(item)
+        print(f"{item} removed from inventory.")
+
+    elif choice == "back":
+        return
+
+
+
+def check_level_up():
+    if player_stats["EXP"] >= 10:
+        print("\n🎉 LEVEL UP! All stats increased!")
+        player_stats["Level"] += 1
+        player_stats["Attack"] += 2
+        player_stats["Defense"] += 2
+        player_stats["Magic"] += 2
+        player_stats["HP"] += 10
+        player_stats["EXP"] = 0
+
+
+
+def death_screen():
+    print("\n💀 You have died.")
+    choice = input("Do you want to restart the game? (yes/no): ").lower()
+
+    if choice == "yes":
+        main_game_loop()
+    else:
+        print("Thanks for playing!")
+        exit()
+
+
+
+def main_game_loop():
+    print("\nWelcome to your adventure!")
+    current_location = choose_location()
+
+    while True:
+
+        if current_location == "Mondstadt City":
+            current_location = mondstadt_city()
+        elif current_location == "Anemo Archon Statue":
+            current_location = anemo_archon_statue()
+        elif current_location == "Dawn Winery":
+            current_location = dawn_winery()
+        elif current_location == "Starsnatch Cliff":
+            current_location = starsnatch_cliff()
+        elif current_location == "Nameless Island":
+            current_location = nameless_island()
+        elif current_location == "Stormbearer Mountains":
+            current_location = stormbearer_mountains()
+        elif current_location == "Springvale":
+            current_location = springvale()
+        elif current_location == "Stormterror's Lair":
+            current_location = stormterror_lair()
+        elif current_location == "Starfell Lake":
+            current_location = starfell_lake()
+
+        if current_location is None:
+            current_location = choose_location()
+

@@ -85,11 +85,6 @@
     # if user choose to go to another location ask what location 
     # if the location is not in the list tell the user that the input is invalid and they need to try again
 
-# define a function for all of the locations so the user could explore them and pick up things from there
-    # if the player is in that location for the first time they can pick up things
-    # if the player is in that location for the second time they can't pick up things that they have in the inventory that means that they need to find things that they never pick up or they need to go to another location
-    # if the player pick up a new item the item is sent to the inventory list
-
 
 # create a function that runs the combats
     # the user has four options punch, sword, use a potion or run away
