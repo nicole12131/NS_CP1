@@ -1,19 +1,17 @@
 # NS 1st Final Project code 
 import random
 
-
 locations = [
-    "Dawn Winery",
-    "Starsnatch Cliff",
-    "Nameless Island",
-    "Anemo Archon Statue",
-    "Stormbearer Mountains",
-    "Springvale",
-    "Mondstadt City",
-    "Stormterror's Lair",
-    "Starfell Lake"
+    "dawn winery", #0
+    "starsnatch cliff", #1
+    "Nameless Island", #2
+    "Anemo Archon Statue", #3
+    "Stormbearer Mountains", #4
+    "Springvale", #5
+    "Mondstadt City", #6
+    "Stormterror's Lair", #7
+    "Starfell Lake" #8
 ]
-
 
 player_stats = {
     "HP": 30,
@@ -24,7 +22,7 @@ player_stats = {
     "Level": 1
 }
 
-inventory = []
+inventory = [] 
 enemies_alive = {
     "Cryo Slime": True,
     "Hilichurl": True,
@@ -43,30 +41,31 @@ items_on_ground = {
     "Potion": "Springvale"
 }
 
-
+print(locations)
+location = input("Where do you want to go?: ")
 
 def choose_location():
     print(locations)
-while True:
-        choice = input("\nWhere do you want to go? ").strip()
-if choice in locations:
-    return choice
-else:
-        print("Invalid location, try again.")
+    location = input("Where do you want to go?: ")
+    while True: 
+        if location in locations:
+            break
+        else:
+            print("Invalid location, try again.")
 
 
 def stay_or_go():
     while True:
-        choice = input("Stay or go to another location? (stay/go): ").lower()
-    if choice in ["stay", "go"]:
-        return choice
-    else:
-        print("Invalid choice, try again.")
+        choice = input("Stay or go to another location?: ").lower()
+        if choice in ["stay", "go"]:
+            return choice
+        else:
+            print("Invalid choice, try again.")
 
 
 
 def mondstadt_city():
-    print("\nYou arrive at Mondstadt City.")
+    print("You arrive at Mondstadt City.")
     choice = stay_or_go()
     if choice == "stay":
         print("You visit shops and explore the city.")
@@ -75,7 +74,7 @@ def mondstadt_city():
 
 
 def anemo_archon_statue():
-    print("\nYou arrive at the Anemo Archon Statue.")
+    print("You arrive at the Anemo Archon Statue.")
     choice = stay_or_go()
     if choice == "stay":
         print("You explore the peaceful statue grounds.")
@@ -84,7 +83,7 @@ def anemo_archon_statue():
 
 
 def dawn_winery():
-    print("\nYou arrive at Dawn Winery.")
+    print("You arrive at Dawn Winery.")
     choice = stay_or_go()
 
     if choice == "stay":
@@ -103,7 +102,7 @@ def dawn_winery():
 
 
 def starsnatch_cliff():
-    print("\nYou climb to Starsnatch Cliff.")
+    print("You climb to Starsnatch Cliff.")
     choice = stay_or_go()
 
     if choice == "stay":
@@ -128,7 +127,7 @@ def starsnatch_cliff():
 
 
 def nameless_island():
-    print("\nYou arrive at Nameless Island.")
+    print("You arrive at Nameless Island.")
     choice = stay_or_go()
 
     if choice == "stay":
@@ -138,7 +137,7 @@ def nameless_island():
 
 
 def stormbearer_mountains():
-    print("\nYou travel to Stormbearer Mountains.")
+    print("You travel to Stormbearer Mountains.")
     choice = stay_or_go()
 
     if choice == "stay":
@@ -160,7 +159,7 @@ def stormbearer_mountains():
 
 
 def springvale():
-    print("\nYou enter Springvale.")
+    print("You enter Springvale.")
     choice = stay_or_go()
 
     if choice == "stay":
@@ -176,14 +175,14 @@ def springvale():
 
 
 def stormterror_lair():
-    print("\nYou enter Stormterror’s Lair.")
+    print("You enter Stormterror’s Lair.")
     choice = stay_or_go()
 
     if choice == "stay":
         print("Dangerous enemies surround you!")
 
         if enemies_alive["Stormterror"]:
-            print("⚠ The FINAL BOSS Stormterror appears!")
+            print("The FINAL BOSS Stormterror appears!")
             combat("Stormterror", 35)
             enemies_alive["Stormterror"] = False
             print("Stormterror is now on your side!")
@@ -195,12 +194,10 @@ def stormterror_lair():
 
 
 def starfell_lake():
-    print("\nYou arrive at Starfell Lake.")
+    print("You arrive at Starfell Lake.")
     choice = stay_or_go()
 
     if choice == "stay":
-
-        # pick fish
         if items_on_ground.get("Fish") == "Starfell Lake":
             print("You caught some fish!")
             inventory.append("Fish")
@@ -216,10 +213,10 @@ def starfell_lake():
 
 
 def combat(enemy, enemy_hp):
-    print(f"\n⚔ Combat started against {enemy}!")
+    print(f"Combat started against {enemy}!")
 
     while enemy_hp > 0 and player_stats["HP"] > 0:
-        print(f"\nYour HP: {player_stats['HP']}\n{enemy}'s HP: {enemy_hp}")
+        print(f"Your HP: {player_stats['HP']}\n{enemy}'s HP: {enemy_hp}")
         action = input("Choose action (punch/sword/potion/run): ").lower()
 
         if action == "punch":
@@ -246,25 +243,22 @@ def combat(enemy, enemy_hp):
         else:
             print("Invalid action.")
             continue
-
-        # Enemy attacks back
         if enemy_hp > 0:
             enemy_dmg = random.randint(1, 5) - player_stats["Defense"]
             enemy_dmg = max(0, enemy_dmg)
             player_stats["HP"] -= enemy_dmg
             print(f"{enemy} hits you for {enemy_dmg} damage!")
 
-    # Combat results
     if player_stats["HP"] <= 0:
         death_screen()
 
-    print(f"\nYou defeated {enemy}!")
+    print(f"You defeated {enemy}!")
     player_stats["EXP"] += 5
     check_level_up()
 
 
 def show_inventory():
-    print("\nInventory:", inventory)
+    print("Inventory:", inventory)
     choice = input("Use or remove an item? (use/remove/back): ").lower()
 
     if choice == "use":
@@ -299,7 +293,7 @@ def show_inventory():
 
 def check_level_up():
     if player_stats["EXP"] >= 10:
-        print("\n🎉 LEVEL UP! All stats increased!")
+        print("LEVEL UP! All stats increased!")
         player_stats["Level"] += 1
         player_stats["Attack"] += 2
         player_stats["Defense"] += 2
@@ -310,8 +304,8 @@ def check_level_up():
 
 
 def death_screen():
-    print("\n💀 You have died.")
-    choice = input("Do you want to restart the game? (yes/no): ").lower()
+    print("You have died.")
+    choice = input("Do you want to restart the game?: ").lower()
 
     if choice == "yes":
         main_game_loop()
@@ -322,11 +316,10 @@ def death_screen():
 
 
 def main_game_loop():
-    print("\nWelcome to your adventure!")
+    print("Welcome to your adventure!")
     current_location = choose_location()
 
     while True:
-
         if current_location == "Mondstadt City":
             current_location = mondstadt_city()
         elif current_location == "Anemo Archon Statue":
