@@ -186,7 +186,7 @@ def starfell_lake():
         return choose_location()
 
 def combat(enemy, enemy_hp):
-    print(f"\nA {enemy.title()} attacks you!")
+    print(f"A {enemy.title()} attacks you!")
 
     while enemy_hp > 0 and player_stats["HP"] > 0:
         print(f"\nYour HP: {player_stats['HP']}")
@@ -232,7 +232,7 @@ def combat(enemy, enemy_hp):
     check_level_up()
 
 def show_inventory():
-    print("\nYour Inventory:", inventory)
+    print("Your Inventory:", inventory)
     choice = input("Use item, remove item, or go back? (use/remove/back): ").lower()
 
     if choice == "use":
