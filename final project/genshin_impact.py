@@ -43,9 +43,9 @@ items_on_ground = {
 }
 
 def choose_location():
-    print("\nLocations you can go to:")
-    print([loc.title() for loc in locations])
-
+    print("Locations you can go to:")
+    print([loc for loc in locations])
+    print("Hint: The sword is in a location that starts with the letter S")
     while True:
         loc = input("Where do you want to go?: ").lower()
         if loc in locations:
@@ -186,11 +186,11 @@ def starfell_lake():
         return choose_location()
 
 def combat(enemy, enemy_hp):
-    print(f"A {enemy.title()} attacks you!")
+    print(f"A {enemy} attacks you!")
 
     while enemy_hp > 0 and player_stats["HP"] > 0:
-        print(f"\nYour HP: {player_stats['HP']}")
-        print(f"{enemy.title()} HP: {enemy_hp}")
+        print(f"Your HP: {player_stats['HP']}")
+        print(f"{enemy} HP: {enemy_hp}")
 
         move = input("Attack with punch/sword/potion or run: ").lower()
 
@@ -216,10 +216,10 @@ def combat(enemy, enemy_hp):
             return
         else:
             print("Invalid move.")
-            continue
+            break
 
         if enemy_hp > 0:
-            hurt = random.randint(1, 5) - player_stats["Defense"]
+            hurt = random.randint(2,10) - player_stats["Defense"]
             hurt = max(hurt, 0)
             player_stats["HP"] -= hurt
             print(f"The {enemy} hits you for {hurt} damage!")
@@ -263,7 +263,7 @@ def show_inventory():
 
 def check_level_up():
     if player_stats["EXP"] >= 10:
-        print("\nLEVEL UP! You feel stronger!")
+        print("LEVEL UP! You feel stronger!")
         player_stats["Level"] += 1
         player_stats["Attack"] += 2
         player_stats["Defense"] += 2
@@ -273,7 +273,7 @@ def check_level_up():
 
 
 def death_screen():
-    print("\nYou have died.")
+    print("You have died.")
     again = input("Do you want to restart? (yes/no): ").lower()
     if again == "yes":
         main_game_loop()
@@ -307,7 +307,6 @@ def main_game_loop():
         elif current_location == "starfell lake":
             current_location = starfell_lake()
 
-        # If a location function returns None, choose again
         if current_location is None:
             current_location = choose_location()
 
